@@ -1,0 +1,124 @@
+html {
+    font-size: calc(100vw / 1920 * 10);
+}
+
+body {
+    margin: 0;
+    font-family: sans-serif;
+    text-align: center;
+    font-size: 8em;
+}
+
+.container {
+    max-width: 100vw;
+    padding: 1em 1em 0;
+}
+
+.general-stats {
+    padding: 1em;
+    background-color: rgba(218, 165, 32, 0.509);
+    margin-bottom: 2em;
+    border-radius: 20px;
+}
+
+.general-stats__title {
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-bottom: 0.5em;
+}
+
+.general-stats__item {
+    margin-bottom: 0.3em;
+}
+
+.user-title {
+    font-size: 1.4em;
+    font-weight: bold;
+    margin-bottom: 1em;
+}
+
+.user-stats__total {
+    font-weight: bold;
+    font-size: 1.25em;
+    margin-bottom: 1em;
+}
+
+.user-stats__total > span {
+    color: darkgreen;
+}
+
+.user-stats__block {
+    padding: 1em;
+    border-radius: 20px;
+    margin-bottom: 1em;
+}
+
+.user-stats__block--piecework {
+    background-color: lightblue;
+}
+
+.user-stats__block--income {
+    background-color: lightgreen;
+}
+
+.user-stats__block--outcome {
+    background-color: lightpink;
+}
+
+.user-stats__title {
+    font-size: 1.3em;
+    font-weight: bold;
+    margin-bottom: 0.5em;
+}
+
+.user-stats__item {
+    margin-bottom: 0.2em;
+}
+
+.filial__list {
+    padding-top: 1em;
+}
+
+.filial__item {
+    margin-bottom: 3em;
+}
+
+.filial__title {
+    font-size: 1.4em;
+    font-weight: bold;
+    margin-bottom: 1em;
+}
+
+.group__item {
+    display: flex;
+    padding: 1em;
+    flex-direction: column;
+    border: 2px solid lightgrey;
+    border-radius: 20px;
+    margin-bottom: 2em;
+}
+
+.group-stats__title {
+    font-size: 1.1em;
+    font-weight: bold;
+    margin-bottom: 1em;
+}
+
+.group-stats__list {
+    padding: 0.7em;
+    border-radius: 20px;
+    background-color: lightsteelblue;
+    margin: 0 2em 1.5em;
+}
+
+.group-stats__item {
+    margin-bottom: 0.1em;
+}
+
+thead {
+    font-weight: bold;
+}
+
+th {
+    padding: 0.2em;
+}

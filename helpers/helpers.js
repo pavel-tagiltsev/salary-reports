@@ -1,0 +1,1 @@
+export const clearUnneededRows = (piecework) => piecework.filter((row) => row.group !== 'Итого по сотруднику' && row.date !== 'Итого по группе');

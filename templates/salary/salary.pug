@@ -1,0 +1,66 @@
+doctype html
+head
+    meta(charset='UTF-8')
+    meta(http-equiv='X-UA-Compatible' content='IE=edge')
+    meta(name='viewport' content='width=device-width, initial-scale=1.0')
+    title= 'Отчет по зарплате'
+
+    style
+        include reset.css
+        include salary.css
+
+body
+    div.container
+        ul.user__list
+            li.user__item
+                h2.user-title= name
+                div.user-stats
+                    div.user-stats__total= 'Итого: '
+                        span= lessons.reduce((sum, current) => sum + current.sum, 0)
+
+                    if increments.length
+                        div.user-stats__block.user-stats__block--income
+                            h3.user-stats__title= "Надбавка"
+                            each increment in increments
+                                div.user-stats__item= `${increment.desc} - ${increment.sum}`
+
+                    if decrements.length
+                        div.user-stats__block.user-stats__block--outcome
+                            h3.user-stats__title= "Вычет"
+                            each decrement in decrements
+                                div.user-stats__item= `${decrement.desc} - ${decrement.sum}`
+
+                    div.user-stats__block.user-stats__block--piecework
+                        h3.user-stats__title= "Сдельная"
+                        div.user-stats__item= `Всего занятий: ${lessons.length}`
+                            div.user-stats__item= `Всего часов: ${lessons.reduce((sum, current) => sum + current.duration, 0)}`
+                            div.user-stats__item= `Всего начислино: ${lessons.reduce((sum, current) => sum + current.sum, 0)}`
+
+                ul.filial__list
+                    each filial in Array.from(new Set(lessons.map((lesson) => lesson.filial)))
+                        li.filial__item
+                            h4.filial__title= filial
+                            ul.group__list
+                                each group in Array.from(new Set(lessons.filter((lesson) => lesson.filial === filial).map((lesson) => lesson.group)))
+                                    li.group__item
+                                        - const lessonsByGroup = lessons.filter((lesson) => lesson.group === group);
+                                            div.group-stats__block.group-stats__block--piecework
+                                                h5.group-stats__title= group
+                                                div.group-stats__list
+                                                    div.group-stats__item= `Всего занятий: ${lessonsByGroup.length}`
+                                                    div.group-stats__item= `Всего часов: ${lessonsByGroup.reduce((sum, current) => sum + current.duration, 0)}`
+                                                    div.group-stats__item= `Всего начислино: ${lessonsByGroup.reduce((sum, current) => sum + current.sum, 0)}`
+                                            table
+                                                thead
+                                                    tr
+                                                        th= 'Дата'
+                                                        th= 'Часов'
+                                                        th= 'Посещений'
+                                                        th= 'Сумма'
+                                                tbody
+                                                    each lesson in lessonsByGroup
+                                                        tr
+                                                            th= `${lesson.date.split(' ')[0]}`
+                                                            th= `${lesson.duration}`
+                                                            th= `${lesson.visits}/${lesson.records}`
+                                                            th= `${lesson.sum}`

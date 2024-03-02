@@ -3,9 +3,14 @@
   "version": "1.0.0",
   "description": "Making salary reports",
   "main": "index.js",
+  "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "run": "node index.js"
   },
   "author": " <pavel.tagiltsef@gmail.com>",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "pug": "^3.0.2",
+    "xlsx": "^0.18.5"
+  }
 }
