@@ -16,7 +16,7 @@ body
                 h2.user-title= name
                 div.user-stats
                     div.user-stats__total= 'Итого: '
-                        span= lessons.reduce((sum, current) => sum + current.sum, 0)
+                        span= lessons.reduce((sum, current) => sum + current.sum, 0) - decrements.reduce((sum, current) => sum + current.sum , 0) + increments.reduce((sum, current) => sum + current.sum , 0)
 
                     if increments.length
                         div.user-stats__block.user-stats__block--income
