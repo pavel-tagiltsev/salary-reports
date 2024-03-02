@@ -1,0 +1,11 @@
+{
+  "name": "salary-reports",
+  "version": "1.0.0",
+  "description": "Making salary reports",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": " <pavel.tagiltsef@gmail.com>",
+  "license": "ISC"
+}
